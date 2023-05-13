@@ -25,7 +25,7 @@ public class MemberServiceV3_3 {
 
     @Transactional
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
-                bizLogic(fromId, toId, money);
+        bizLogic(fromId, toId, money);
     }
 
     private void bizLogic(String fromId, String toId, int money) throws SQLException {
@@ -38,7 +38,7 @@ public class MemberServiceV3_3 {
     }
 
     private static void validation(Member toMember) {
-        if(toMember.getMemberId().equals("ex")){
+        if (toMember.getMemberId().equals("ex")) {
             throw new IllegalStateException("이체중 예외 발생!!");
         }
     }
